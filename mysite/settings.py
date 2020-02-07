@@ -27,7 +27,9 @@ DEBUG = False
 
 # ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
-ALLOWED_HOSTS = ('django-env.xg4mmhsnvt.us-east-2.elasticbeanstalk.com')
+#ALLOWED_HOSTS = ('django-env.xg4mmhsnvt.us-east-2.elasticbeanstalk.com')
+
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
