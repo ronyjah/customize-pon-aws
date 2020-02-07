@@ -1,0 +1,101 @@
+@use 'sass:map';
+
+
+
+/*------------------------------------------------------
+   INPUT RADIO
+------------------------------------------------------- */
+
+[type=radio] {
+
+  &:checked,
+  &:not(:checked) {
+    position: absolute;
+    left: -9999px;
+  }
+
+  &:checked+label,
+  &:not(:checked)+label {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: get($colors, "neutral1-dark5") !important;
+  }
+
+  &:checked+label:before,
+  &:not(:checked)+label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: get($borderWidth, "border-width1") solid get($colors, "neutral1-light3");
+    border-radius: 100%;
+    background: get($colors, "predominant");
+  }
+
+  &:checked+label:before {
+    border: get($borderWidth, "border-width1") solid get($colors, "accent");
+  }
+
+  
+
+  &[disabled]:checked+label:before {
+    border: get($borderWidth, "border-width1") solid get($colors, "neutral1-light3");
+  }
+
+  &[disabled]:not(:checked)+label:before {
+    border: get($borderWidth, "border-width1") solid get($colors, "neutral1-light3");
+  }
+
+  &:checked+label:after,
+  &:not(:checked)+label:after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: get($colors, "accent");
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+
+  &:not(:checked)+label:after {
+    content: none !important;
+  }
+
+  &:checked[disabled]+label:after,
+  &:not(:checked)[disabled]+label:after {
+    background: get($colors, "neutral1-light3");
+  }
+
+  &:not(:checked)+label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  &:checked+label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  &[disabled]:not(:checked)+label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+
+}
+
+
+.disableOption[type=radio][disabled]:not(checked)+label:before {
+  background: get($colors, "neutral2-light6") !important;
+}

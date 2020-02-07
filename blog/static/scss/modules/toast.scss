@@ -1,0 +1,62 @@
+@use 'sass:map';
+
+
+
+
+/*------------------------------------------------------
+   TOAST
+------------------------------------------------------- */
+
+.toast {
+  box-shadow: none;
+}
+
+.toast-body{
+  &.toast-success {
+    background-color: get($colors, "success");
+    color: get($colors, "predominant");
+    font-size: get($fonts, "font-size4");
+  }
+
+  &.toast-informational {
+    background-color: get($colors, "info");
+    color: get($colors, "predominant");
+    font-size: get($fonts, "font-size4");
+  }
+
+  &.toast-attention {
+    background-color: get($colors, "warning");
+    color: get($colors, "predominant");
+    font-size: get($fonts, "font-size4");
+  }
+
+  &.toast-error {
+    background-color: get($colors, "critical");
+    color: get($colors, "predominant");
+    font-size: get($fonts, "font-size4");
+  }
+
+  & .toast-button {
+    color: get($colors, "predominant");
+  }
+
+  & .text-toast p {
+    color: get($colors, "predominant");
+    font-size: get($fonts, "font-size4");
+    font-weight: bold;
+  }
+
+  & img {
+    width: 53px;
+  }
+}
+
+.position-toast {
+  top: 30px;
+  right: 20px;
+  width: 280px;
+}
+
+.toastImg{
+  font-size: 50px;
+}

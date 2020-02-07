@@ -1,0 +1,119 @@
+@use 'sass:map';
+
+
+/*------------------------------------------------------
+   DROPDOWN SIG
+------------------------------------------------------- */
+
+.intelbras-dropdown-btn {
+  border-color: get($colors, "neutral1");
+  color: get($colors, "neutral2-dark6");
+}
+
+.intelbras-form-control:not([disabled=true]) .intelbras-dropdown-content a {
+  margin: 5px;
+  padding: 0;
+  border-radius: 2px;
+}
+
+.intelbras-form-control:not(.control-is-valid):not(.control-is-invalid):hover .intelbras-dropdown-btn {
+  border-color: get($colors, "neutral1-dark6");
+}
+
+.intelbras-form-control:not(.control-is-valid):not(.control-is-invalid):hover .intelbras-dropdown-label {
+  color: get($colors, "neutral1-dark6");
+}
+
+.intelbras-form-control[disabled=true] .intelbras-dropdown-label {
+  color: get($colors, "neutral2")!important;
+}
+
+.intelbras-form-control[disabled=true] .intelbras-dropdown-btn {
+  border-color: get($colors, "neutral2")!important;
+  border-left-width: 1px;
+}
+
+.control-is-valid .intelbras-dropdown-btn, .control-is-invalid  .intelbras-dropdown-btn {
+  border-left-width: 10px;
+}
+
+.intelbras-dropdown, .intelbras-dropdown-btn {
+  width: 100%;
+  outline: 0 !important;
+}
+
+.intelbras-form-control:not([disabled=true]) .intelbras-dropdown-content a:hover {
+  background-color: get($colors, "accent-light2");
+}
+
+.intelbras-dropdown-label {
+  transform: translateY(-10px) translateX(15px);
+  z-index: 1;
+  background-color: get($colors, "predominant");
+  position: absolute;
+  font-size: 14px;
+  color: get($colors, "neutral1");
+  font-weight: normal;
+}
+
+
+
+.control-is-valid:not([disabled=true]):hover .intelbras-dropdown-btn {
+  border-color: get($colors, "success");
+}
+
+.control-is-invalid:not([disabled=true]):hover .intelbras-dropdown-btn {
+  border-color: get($colors, "critical");
+}
+
+.control-is-valid:not([disabled=true]) .intelbras-dropdown-btn {
+  border-top-color: get($colors, "neutral1");
+  border-bottom-color: get($colors, "neutral1");
+  border-right-color: get($colors, "neutral1");
+  border-left-color: get($colors, "success");
+}
+
+.control-is-invalid:not([disabled=true]) .intelbras-dropdown-btn {
+  border-top-color: get($colors, "neutral1");
+  border-bottom-color: get($colors, "neutral1");
+  border-right-color: get($colors, "neutral1");
+  border-left-color: get($colors, "critical");
+}
+
+.invalid-feedback {
+  padding: 2px;
+  display: none;
+  width: 100%;
+  margin-top: 3px;
+  margin-left: 0px !important;
+  font-size: get($fonts, "font-size1");
+  text-align: center;
+  color: get($colors, "predominant") !important;
+  background-color: get($colors, "critical");
+  border-radius: get($borderRadius, "border-radius1");
+}
+
+.control-is-valid .valid-feedback {
+  display: none!important;
+}
+
+.control-is-valid:not([disabled=true]):hover .intelbras-dropdown-label  {
+  color: get($colors, "success");
+}
+
+.control-is-invalid:not([disabled=true]):hover .intelbras-dropdown-label  {
+  color: get($colors, "critical");
+}
+
+.fas.arrow.arrow-sort {
+  display: none;
+}
+
+.fas.arrow.arrow-chevron {
+  color: get($colors, "neutral1");
+  display: inline-block;
+}
+
+.intelbras-form-control[disabled=true] .arrow-chevron {
+  color: get($colors, "neutral2");
+} 

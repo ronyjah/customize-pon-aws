@@ -1,0 +1,253 @@
+@use 'sass:map';
+
+
+
+
+/*------------------------------------------------------
+   INPUT TEXT
+------------------------------------------------------- */
+
+.floating {
+  background-color: get($colors, "predominant");
+  border-radius: get($borderRadius, "border-radius2");
+  transition: background-color 0.2s ease;
+  width: 100%;
+  position: relative;
+
+
+  &.success-input-text {
+    background-color: get($colors, "success-light6") !important;
+  }
+  
+  &.error-input-text {
+    background-color: get($colors, "critical-light6") !important;
+  }
+  
+  &:focus-within {
+    background-color: get($colors, "neutral2-light6") !important;
+  }
+}
+
+
+
+.floating-input {
+  padding: 28px 16px 9.6px;
+  border-radius: get($borderRadius, "border-radius2");
+  border: 0.5px solid get($colors, "neutral2-light3");
+  font-size: 14px;
+  height: 45px;
+  overflow: hidden;
+  // font-weight: 600;
+
+
+  &.is-valid-input {
+    border: 0.5px solid get($colors, "success");
+  }
+  
+  &.is-invalid-input {
+    border: 0.5px solid get($colors, "critical");
+  }
+  
+  &::placeholder {
+    color: transparent;
+  }
+  
+  &:not(:placeholder-shown) {
+    background-color: get($colors, "neutral2-light6");
+    border-color: get($colors, "neutral2-light6");
+  }
+  
+  &.is-valid-input:not(:placeholder-shown) {
+    background-color: get($colors, "success-light6") !important;
+    border-color: get($colors, "success") !important;
+  }
+  
+  &.is-invalid-input:not(:placeholder-shown) {
+    background-color: get($colors, "critical-light6") !important;
+    border-color: get($colors, "critical") !important;
+  }
+  
+  &:focus {
+    box-shadow: none !important;
+    border-color: get($colors, "neutral2-light6");
+    background-color: get($colors, "neutral2-light6");
+  }
+  
+  &:focus + .floating-label::after {
+    transform: scale3d(1, 1, 1);
+  }
+  
+  &:placeholder-shown + .floating-label::before {
+    transform: translate3d(0, -32px, 0) scale3d(1, 1, 1);
+  }
+  
+  .floating-label::before,
+  &:focus + .floating-label::before {
+    transform: translate3d(0, -40px, 0) scale3d(0.82, 0.82, 1);
+  }
+
+
+}
+
+
+.floating-label {
+  display: block;
+  position: absolute;
+  top: 45px;
+  max-height: 0;
+  pointer-events: none;
+  font-size: 14px;
+  margin: 0;
+  color: get($colors, "neutral1-light3");
+  font-weight: normal;
+
+  &::before {
+    content: attr(data-content);
+    display: block;
+    filter: blur(0);
+    backface-visibility: hidden;
+    transform-origin: left top;
+    transition: transform 0.2s ease;
+    left: 16px;
+    position: relative;
+  }
+  
+  &::after {
+    bottom: 16px;
+    content: "";
+    height: 1.6px;
+    position: fixed !important;
+    opacity: 0;
+    left: 0;
+    top: 100%;
+    transform: scale3d(0, 1, 1);
+    width: 100%;
+  }
+  
+}
+
+
+
+
+input, textarea{
+  outline: transparent;
+  background: none;
+  border-width: 0;
+  display: block;
+  width: 100%;
+}
+
+.success-response {
+  display: none;
+  width: 100%;
+  margin-left: 16px;
+  font-size: get($fonts, "font-size1");
+  color: get($colors, "success");
+
+  .success-input-text~& {
+    display: block !important;
+  }
+}
+
+
+
+.error-response {
+  display: none;
+  width: 100%;
+  margin-left: 16px;
+  font-size: get($fonts, "font-size1");
+  color: get($colors, "critical");
+
+  .error-input-text~& {
+    display: block !important;
+  }
+}
+
+
+
+.imgPassword {
+  display: none !important;
+}
+
+/*------------------------------------------------------
+   TEXT AREA - COM JAVA SCRIPT
+------------------------------------------------------- */
+
+// .floating-textarea {
+//   background-color: get($colors, "predominant");
+//   transition: background-color 0.2s ease;
+//   width: 100%;
+//   position: relative;
+//   padding-top: 5px;
+//   border-radius: get($borderRadius, "border-radius1");
+//   border: 0.5px solid get($colors, "neutral2-light3");
+// }
+
+// .floating-textarea:focus-within {
+//   background-color: get($colors, "neutral2-light6") !important;
+//   border-color: get($colors, "neutral2-light6") !important;
+// }
+
+// .floating-textarea-input {
+//   padding: 0px 16px 9.6px;RADIUS
+
+// .floating-textarea-input::placeholder {
+//   color: transparent;
+// }
+
+// .floating-textarea-input:not(:placeholder-shown) {
+//   background-color: get($colors, "neutral2-light6") !important;
+//   border-color: get($colors, "neutral2-light6") !important;
+// }
+
+// .floating-textarea-input:focus {
+//   box-shadow: none !important;
+// }
+
+// .floating-textarea-label {
+//   display: block;
+//   position: absolute;
+//   top: 45px;
+//   max-height: 0;
+//   pointer-events: none;
+//   font-size: 14px;
+//   margin: 0;
+//   color: get($colors, "neutral1-light3");
+//   font-weight: normal;
+// }
+
+// .floating-textarea-label::before {
+//   content: attr(data-content);
+//   display: block;
+//   filter: blur(0);
+//   backface-visibility: hidden;
+//   transform-origin: left top;
+//   transition: transform 0.2s ease;
+//   left: 16px;
+//   position: relative;
+// }
+
+// .floating-textarea-label::after {
+//   bottom: 16px;
+//   content: "";
+//   height: 1.6px;
+//   position: fixed !important;
+//   opacity: 0;
+//   left: 0;
+//   top: 100%;
+//   transform: scale3d(0, 1, 1);
+//   width: 100%;
+// }
+
+// .floating-textarea-input:focus + .floating-textarea-label::after {
+//   transform: scale3d(1, 1, 1);
+// }
+
+// .floating-textarea-input:placeholder-shown + .floating-textarea-label::before {
+//   transform: translate3d(0, -32px, 0) scale3d(1, 1, 1);
+// }
+
+// .floating-textarea-label::before,
+// .floating-textarea-input:focus + .floating-textarea-label::before {
+//   transform: translate3d(0, -40px, 0) scale3d(0.82, 0.82, 1);
+// }

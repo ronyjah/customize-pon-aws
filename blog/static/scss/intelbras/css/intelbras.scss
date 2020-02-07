@@ -1,0 +1,41 @@
+@use 'sass:map';
+
+@import '../../../css/bootstrap-4.4.1/css/bootstrap';
+
+@import '../../variables/colors';
+@import '../../variables/sizes';
+@import '../../variables/typography';
+
+//Modules
+@import '../../modules/accordion';
+@import '../../modules/alerts';
+@import '../../modules/aligments';
+@import '../../modules/background';
+@import '../../modules/border-radius';
+@import '../../modules/border-width';
+@import '../../modules/box-shadows';
+@import '../../modules/breadcrumb';
+@import '../../modules/button-badge';
+@import '../../modules/button-group';
+@import '../../modules/buttons';
+@import '../../modules/card';
+@import '../../modules/checkbox';
+@import '../../modules/gradient';
+@import '../../modules/images';
+@import '../../modules/input-dropdown-list';
+@import '../../modules/input-radio';
+@import '../../modules/input-range';
+@import '../../modules/input-text';
+@import '../../modules/modal';
+@import '../../modules/nav';
+@import '../../modules/navbar';
+@import '../../modules/pagination';
+@import '../../modules/popover';
+@import '../../modules/progress';
+@import '../../modules/sidebar';
+@import '../../modules/spinner';
+@import '../../modules/table';
+@import '../../modules/toast';
+@import '../../modules/tooltips';
+@import '../../modules/typograph';
+@import '../../modules/upload-file';

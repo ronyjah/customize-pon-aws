@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   viewBox="0 0 100 100"
+   data-name="Camada 1"
+   id="Camada_1">
+  <metadata
+     id="metadata3936">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>confirmacao_linha</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3934" />
+  <title
+     id="title3925">confirmacao_linha</title>
+  <path
+     style="fill:#f9f9f9"
+     id="path3927"
+     d="M50,97.5A47.5,47.5,0,1,1,97.5,50,47.56,47.56,0,0,1,50,97.5ZM50,5.4A44.6,44.6,0,1,0,94.6,50,44.65,44.65,0,0,0,50,5.4Z" />
+  <path
+     style="fill:#ffffff"
+     id="path3929"
+     d="M23.09,45.31A1.74,1.74,0,0,1,26,44.06c6.59,6.36,16.87,16.21,20.11,19.15C49.4,60.28,67.36,43,74,36.66a1.74,1.74,0,1,1,2.42,2.51C55,59.83,47.08,67.23,46.15,67.23s-1.13,0-22.53-20.66a1.76,1.76,0,0,1-.53-1.26" />
+</svg>

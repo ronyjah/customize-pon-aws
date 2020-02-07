@@ -1,0 +1,31 @@
+@use 'sass:map';
+
+
+
+
+/*------------------------------------------------------
+   POPOVER
+------------------------------------------------------- */
+
+.popover-body {
+  background-color: get($colors, "neutral1-light3") !important;
+  color: get($colors, "predominant") !important;
+}
+
+.bs-popover{
+  &-top>.arrow::after {
+    border-top-color: get($colors, "neutral1-light3");
+  }
+
+  &-left>.arrow::after {
+    border-left-color: get($colors, "neutral1-light3");
+  }
+
+  &-right>.arrow::after {
+    border-right-color: get($colors, "neutral1-light3");
+  }
+
+  &-bottom>.arrow::after {
+    border-bottom-color: get($colors, "neutral1-light3");
+  }
+}

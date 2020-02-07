@@ -1,0 +1,15 @@
+@use 'sass:map';
+
+
+
+
+/* ---------------------------------------------------
+  BORDER RADIUS
+----------------------------------------------------- */
+
+@each $name,
+$size in $borderRadius {
+  .#{$name} {
+    border-radius: $size !important;
+  }
+}

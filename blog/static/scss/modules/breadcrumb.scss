@@ -1,0 +1,35 @@
+@use 'sass:map';
+
+
+/*------------------------------------------------------
+   BREADCRUMB
+------------------------------------------------------- */
+
+%breadcrumb-base {
+  font-size: get($fonts, "font-size6") !important;
+  background-color: get($colors, "predominant") !important;
+  text-decoration-line: underline;
+  font-weight: 600;
+}
+
+.breadcrumb {
+    @extend %breadcrumb-base;
+  
+
+  & a{
+    @extend %breadcrumb-base;;
+  }
+  
+  &-item a:hover {
+    color: get($colors, "accent");
+  }
+  
+  &.able>li+li:before {
+    color: get($colors, "accent") !important;
+    content: ">" !important;
+  }
+  
+  &.disabled>li+li:before {
+    content: ">" !important;
+  }
+}

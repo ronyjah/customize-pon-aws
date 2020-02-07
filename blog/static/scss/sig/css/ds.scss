@@ -1,0 +1,11 @@
+@use 'sass:map';
+@import '../variables/colors';
+@import '../variables/sizes';
+@import '../variables/typography';
+
+// main ds
+@import '../../ds-base';
+
+.navbar-example-main {
+  background-color: get($colors, "intermediate");
+}

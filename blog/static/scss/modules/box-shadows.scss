@@ -1,0 +1,15 @@
+@use 'sass:map';
+
+
+
+
+/* ---------------------------------------------------
+  BOX SHADOWS
+----------------------------------------------------- */
+
+@each $name,
+$size in $boxShadows {
+  .#{$name} {
+    box-shadow: $size !important;
+  }
+}

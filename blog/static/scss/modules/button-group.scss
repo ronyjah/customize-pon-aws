@@ -1,0 +1,18 @@
+@use 'sass:map';
+@import 'utils';
+
+
+/*---------------------------------------------------
+* BUTTON GROUP
+* -------------------------------------------------*/
+
+.btn-group
+{
+  & button.intelbras-dropdown-btn {
+    @extends %full-width;
+  }
+  
+  & .intelbras-dropdown-content {
+    @extends %full-width;
+  }
+}

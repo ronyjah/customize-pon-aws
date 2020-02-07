@@ -1,0 +1,118 @@
+@use 'sass:map';
+@import 'utils';
+
+
+/*------------------------------------------------------
+   INPUT DROPDOWN LIST
+------------------------------------------------------- */
+
+.intelbras-dropdown-btn {
+  background-color: get($colors, "predominant");
+  padding: 12px 40px 12px 20px;
+  font-size: get($fonts, "font-size4");
+  border: get($colors, "neutral2-light3") solid get($borderWidth, "border-width1");
+  cursor: pointer;
+  color: get($colors, "neutral2-light3");
+  width: 100%;
+  text-align: left;
+  outline: none;
+  border-radius: get($borderRadius, "border-radius1");
+  height: 45px;
+
+  &.control-has-value {
+    color: get($colors, "neutral1");
+  }
+}
+
+.intelbras-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.intelbras-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: get($colors, "predominant");
+  z-index: 1;
+  border: get($colors, "neutral1-light3") solid get($borderWidth, "border-width1");
+  width: 100%;
+  max-height: 150px;
+  overflow-y: auto;
+  overflow-x: none;
+  border-radius: get($borderRadius, "border-radius1");
+}
+
+.intelbras-form-control:not([disabled=true]) {
+  & .intelbras-dropdown-content a {
+    color: get($colors, "neutral1-dark5");
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    color: get($colors, "neutral1-light3");
+    background-color: get($colors, "predominant");
+    font-size: get($fonts, "font-size4");
+  }
+
+  & .intelbras-dropdown-content a:hover, 
+  & .intelbras-dropdown-content a[data-selected=true] {
+    background-color: get($colors, "accent");
+    color: get($colors, "predominant");
+  }
+
+  & .intelbras-dropdown:hover:not([disable-hover]) .intelbras-dropdown-content {
+    display: block;
+  }
+}
+
+.intelbras-dropdown-btn .arrow {
+  // width: 0;
+  // height: 0;
+  // border-style: solid;
+  // border-width: get($borderWidth, "border-width6") get($borderWidth, "border-width4") 0 get($borderWidth, "border-width4");
+  // border-color: get($colors, "neutral1-light3") transparent transparent transparent;
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  color: get($colors, 'neutral2')
+}
+
+.form-group input#formGroupExampleInputValidation {
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
+  background-image: none !important;
+}
+
+.control-is-valid {
+  & .intelbras-dropdown-btn {
+    border-color: get($colors, "success");
+  }
+
+  & .valid-feedback {
+    display: block !important;
+  }
+}
+
+.control-is-invalid {
+  & .intelbras-dropdown-btn {
+    border-color: get($colors, "critical");
+  }
+
+  & .invalid-feedback {
+    display: block !important;
+  }
+}
+
+.intelbras-dropdown, .intelbras-dropdown-btn {
+  @extend %full-width;
+}
+
+.fas.arrow.arrow{
+  &-sort {
+    display: inline-block;
+  }
+
+  &-chevron {
+    display: none;
+  }
+}

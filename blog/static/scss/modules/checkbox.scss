@@ -1,0 +1,100 @@
+@use 'sass:map';
+
+
+
+/* ---------------------------------------------------
+  CHECKBOX
+----------------------------------------------------- */
+
+.custom-control-label {
+  user-select: none;
+}
+
+.custom-switch .custom-control-label {
+  line-height: 36px !important;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+  border-color: get($colors, "accent");
+  background-color: get($colors, "accent");
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+.custom-checkbox {
+  height: 24px;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+.custom-checkbox {
+  & .custom-control-label {
+    padding-left: 8px;
+    line-height: 32px;
+  }
+
+  & .custom-control-label::after,
+  & .custom-control-label::before {
+    width: 24px;
+    height: 24px;
+    box-shadow: none !important;
+  }
+}
+
+
+
+.custom-switch {
+  padding-left: 72px;
+  box-shadow: none !important;
+
+  & .custom-control-label::before {
+    left: -72px;
+    width: 56px;
+    pointer-events: all;
+    border-radius: get($borderRadius, "border-radius6");
+    height: 28px;
+    box-shadow: none !important;
+  }
+  
+  & .custom-control-label::after {
+    top: 6px;
+    left: -68px;
+    width: 24px;
+    height: 24px;
+    background-color: get($colors, "accent");
+    border-radius: get($borderRadius, "border-radius5");
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+    transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+    box-shadow: none !important;
+  }
+
+  & .custom-control-input:checked~.custom-control-label::after {
+    background-color: get($colors, "predominant");
+    -webkit-transform: translateX(24px);
+    transform: translateX(24px);
+  }
+  
+  & .custom-control-input:disabled~.custom-control-label{
+    &::before {
+      background-color: get($colors, "neutral2-light6") !important;
+    }
+  
+    &::after {
+      background-color: get($colors, "neutral2-light3") !important;
+    }
+  }
+
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .custom-switch .custom-control-label::after {
+    transition: none;
+  }
+}
+
+.custom-control-input:disabled:checked~.custom-control-label::before {
+  background-color: get($colors, "neutral2-light5") !important;
+  border-color: get($colors, "neutral2-light4") !important;
+}

@@ -1,0 +1,17 @@
+@use 'sass:map';
+@import 'utils';
+
+
+
+
+/*---------------------------------------------------
+* NAVBAR
+* -------------------------------------------------*/
+
+.navbar-dark {
+  background-color: get($colors, "accent") !important;
+}
+
+.nav-intelbras-logo {
+  width: 100px;
+}

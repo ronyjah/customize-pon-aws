@@ -1,0 +1,31 @@
+@use 'sass:map';
+
+
+
+/*---------------------------------------------------
+* SPINNER
+* -------------------------------------------------*/
+
+.loading-page {
+  width: 50px;
+  height: 50px;
+  border: get($borderWidth, "border-width5") solid get($colors, "neutral1-light3");
+  border-right-color: get($colors, "accent");
+  -webkit-animation: spinner-border 1.5s linear infinite;
+  animation: spinner-border 1.5s linear infinite;
+
+  &.loading-centralized {
+    position: relative;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+  }
+  
+  &.loading-fixed {
+    position: fixed !important;
+  }
+
+}
+
+.no-animation {
+  transition: none !important;
+}

@@ -1,0 +1,29 @@
+@use 'sass:map';
+@import 'utils';
+
+
+
+
+
+/*---------------------------------------------------
+* ACCORDION
+* -------------------------------------------------*/
+
+.card-header {
+  background: get($colors, "accent");
+
+  & .btn-link {
+    color: get($colors, "predominant");
+    transition: none;
+  }
+  
+  & .btn-link:hover, & .btn-link:focus {
+    @extend %clear-decoration;
+  }
+  
+}
+
+.btn-collapsible {
+  @extend .btn;
+  @extend .btn-link;
+}

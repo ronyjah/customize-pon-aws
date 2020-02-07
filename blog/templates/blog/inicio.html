@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <title>Customize Redes de Fibra Óptica</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/aa.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+    <div class="head">
+        <div class="content">
+            <div class="content_logo">
+            <img src="{% static 'img/login_icon_m.png' %}" style="width:180px;height:50px;background:url(./admin/LoginFiles/login_icon_m.png) 
+            no-repeat;background-position:0 0;float:left;margin-left:30px;margin-top:4px;background-size: 100% 100%;" alt="My image">
+        </div>
+        </div>
+    </div>
+
+<form action="/action_page.php">
+  Insira o arquivo .conf e clique em Submit que cuidaremos do resto:<br>
+  <input type="text" name="insertFile" value="ONT121W.conf">
+  <br>
+  <!-- Last name:<br>
+  <input type="text" name="lastname" value="Mouse">
+  <br> -->
+  <input type="submit" value="Submit">
+</form> 
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="document">
+    <button type="submit">Upload file</button>
+  </form>
+
+
+
+<div id="progress-wrapper">
+    <button id="progress-bar-trigger">Run</button>
+    <div id="progress-bar" style="background-color: rgb(251, 255, 0); width: 0%;">&nbsp;</div>
+    <div id="progress-bar-message">Waiting for progress to start...</div>
+  </div>
+
+<div>
+<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+</div>
+</body>
+<script src="{% static 'js/bb.js' %}"></script>
+</html>
+<!-- 
+ <form action="/boaform/admin/formStatus" method="POST" name="status">
+  
+  
+  
+    <input type="hidden" value="/admin/status.asp" name="submit-url">
+    <input type="submit" value="Atualizar" name="refresh">&nbsp;&nbsp;
+    
+    <input type="button" value="Modify" name="modify" onClick="modifyClick('/admin/date.asp')">
+    </form>  -->

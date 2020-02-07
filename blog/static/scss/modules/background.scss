@@ -1,0 +1,14 @@
+@use 'sass:map';
+
+
+
+/* ---------------------------------------------------
+  BACKGROUND
+----------------------------------------------------- */
+
+@each $color-name,
+$color-hex in $colors {
+  .bgc-#{$color-name} {
+    background-color: $color-hex;
+  }
+}

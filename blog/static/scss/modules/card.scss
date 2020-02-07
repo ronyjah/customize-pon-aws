@@ -1,0 +1,71 @@
+@use 'sass:map';
+
+
+
+
+
+/*---------------------------------------------------
+* CARD
+* -------------------------------------------------*/
+
+.card-model {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 50px;
+  transition: all .2s ease-in-out;
+  border-radius: get($borderRadius, "border-radius1");
+  // box-shadow: get($boxShadows, "box-shadow2") !important;
+
+  &:hover {
+    // box-shadow: get($boxShadows, "box-shadow5") !important;
+  }
+
+  & .image {
+    height: 200px;
+    opacity: .9;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+  }
+}
+
+.cogCard{
+  width: auto;
+  height: auto;
+  font-size: 30px;
+  color: get($colors, "accent")
+}
+
+.cardImgCalendar{
+  width: auto;
+  height: auto;
+  font-size: 18px;
+  color: get($colors, "accent")
+}
+
+.card-model {
+ & .image:hover,
+ & .card:hover .image {
+  height: 200px;
+  opacity: 1;
+  }
+
+  & .fab {
+    position: absolute;
+    margin-top: -200px;
+    right: 20px;
+    text-align: center;
+    -webkit-transition: -webkit-transform .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+  }
+
+  & .fab:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+  &-buttons {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0 10px 0;
+  }
+} 

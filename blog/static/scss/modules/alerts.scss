@@ -1,0 +1,39 @@
+@use 'sass:map';
+
+
+/* ---------------------------------------------------
+  ALERTS
+----------------------------------------------------- */
+
+%alert-basic {
+  @extend .alert;
+  color: get($colors, "predominant");
+  text-align: center;
+}
+
+.alert {
+  &-success {
+    background-color: get($colors, "success");
+    border-color: get($colors, "success");
+    @extend %alert-basic;
+  }
+  
+  &-warning {
+    background-color: get($colors, "warning");
+    border-color: get($colors, "warning");
+    @extend %alert-basic;
+  }
+  
+  &-danger {
+    background-color: get($colors, "critical");
+    border-color: get($colors, "critical");
+    @extend %alert-basic;
+  }
+  
+  &-info {
+    background-color: get($colors, "info");
+    border-color: get($colors, "info");
+    @extend %alert-basic;
+  }  
+}
+

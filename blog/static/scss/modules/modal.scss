@@ -1,0 +1,59 @@
+@use 'sass:map';
+
+
+
+/* ---------------------------------------------------
+  MODAL
+----------------------------------------------------- */
+
+.modal-content {
+  border: get($borderWidth, "border-width1") solid get($colors, "predominant")
+}
+
+.modal-header {
+  border-bottom: 0px
+}
+
+.modal-footer {
+  border-top: 0px
+}
+
+.modal-body{ 
+  & i{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  & p {
+    text-align: center !important;
+  }
+
+  & h3 {
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+.modal-backdrop{
+    opacity: 70% !important;
+}
+
+%modal-img {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.successModalImg{
+  font-size: 80px;
+  color: get($colors, "success");
+  @extend %modal-img;
+}
+
+.errorModalImg{
+  font-size: 90px;
+  color: get($colors, "critical");
+  @extend %modal-img;
+}

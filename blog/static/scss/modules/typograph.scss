@@ -1,0 +1,40 @@
+@use 'sass:map';
+
+
+
+
+/* ---------------------------------------------------
+  TIPOGRAPHY
+----------------------------------------------------- */
+
+body {
+  font-family: $font-family;
+  font-size: get($fonts, "font-size1");
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: get($colors, "neutral1-dark5")
+}
+
+p {
+  color: get($colors, "neutral1-light3")
+}
+
+a {
+  color: get($colors, "accent")
+}
+
+a:hover {
+  color: get($colors, "accent-dark1")
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+}

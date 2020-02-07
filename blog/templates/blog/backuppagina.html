@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+  <title>Customize Intelbras GPON/EPON</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/bootstrap-4.4.1/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/intelbras.css' %}">
+    <link rel="icon" type="image/png" href="{% static '/img/favicon-32x32.png' %}">
+</head>
+
+<body>
+
+        <div class="headcustomize" href="#">
+            <p style="font-size:20px;color:white;line-height: 1.5;font-weight: 400;margin-top: 5px;" align="center"><img style="margin-top: 5px;"align="left" class="nav-intelbras-logo" src="{% static '/img/logo2.png' %}"></img>
+                GPON/EPON - Customize seu Firmware</p>
+            </div>    
+            
+        
+    
+    <p style="margin-top: 5em;"></p>
+    <div class="container">
+        <form  name="form1" method="POST" enctype="multipart/form-data" onsubmit="required()">
+            <p  style="font-size:20px"> <label for="exampleFormControlSelect1">Escolha o produto</label></p>
+            {% csrf_token %}
+            
+            <div id="intelbrasOptionsExample" class="intelbras-dropdown">
+               
+                <select name="modelo" class="form-control" id="exampleFormControlSelect1">
+                    <option value="ONT121W" >Roteador ONT 121 W</option>
+                    <option value="ONU110B" >Bridge ONU 110 B</option>
+                    <option value="ONT142NW" > Roteador ONT 142 NW</option>
+                </select>
+            </div>
+
+            <p style="margin-top: 5em;"></p>
+            <p  style="font-size:20px"> <label for="exampleFormControlSelect1">Carregue abaixo o arquivo config.xml do produto acima:</label></p>
+            <div class="form-group">
+                <div class="upload-btn-wrapper">
+                    <input id="mySelect" accept=".xml" type="file"  name="document" onchange="readURL();">
+                    <button  class="btn btn-primary" >Carregar Arquivo</button>
+                </div>
+            </div>   
+            <div> 
+            <b><ul id="demo"></ul></b> 
+            </div>
+
+
+            {% if messages %}
+            <ul class="messages">
+                <!-- {% for message in messages %} -->
+                        <script type="text/javascript">  document.getElementById("demo").innerHTML = "{{ message }}"; </script>
+                <!-- {% endfor %} -->
+            </ul>
+            {% endif %}
+            <script>
+                function readURL() {
+                    let x = document.getElementById("mySelect").files[0].name;
+                    document.getElementById("demo").innerHTML = "Arquivo selecionado: " + x;                   
+                }
+            </script>
+
+
+            <p style="margin-top: 5em;"></p>
+                <p  style="font-size:20px"> <label for="exampleFormControlSelect1">Digite o nome de arquivo de firmware:</label></p>
+                <div class="floating" >
+                    
+                <input style="font-size:20px" type="text" minlength="1" maxlength="10" name="firmware" class="floating-input" placeholder=" ">
+                <label for="formGroupExampleInput" class="floating-label" data-content="Nome"></label>
+            </div>
+
+        <script>
+            function required()
+            {
+                var empt = document.form1.firmware.value;
+                if (empt === "")
+                {   
+                    alert("Formulário incompleto");
+                    return false;
+                }   
+                var empt = document.form1.document.value;
+                if (empt === "")
+                {
+                    alert("Formulário incompleto");
+                    return false;
+                }
+            }
+        </script>
+
+            <p style="margin-top: 5em;"></p>
+            <p  style="font-size:20px"> <label for="exampleFormControlSelect1">Digite GPON vendor ID (Padrão ITBS):</label></p>
+            <b><p  style="font-size:11px;color:red;"> <label for="exampleFormControlSelect1"> Alterando o Vendor ID pelo Customize, não será possível alterar manualmente na interface Web do produto. </label></p></b>
+            <div class="floating" >
+                <input type="text" style="text-transform: uppercase;font-size:20px" minlength="4" maxlength="4" name="vendorid" class="floating-input" placeholder=" ">
+                <label for="formGroupExampleInput" class="floating-label" data-content="VendorID"></label>
+            </div>
+            
+            <p style="margin-top: 2.5em;"></p>
+            
+            <button type="submit" class="btn-primary">Gerar Firmware</button>
+        </form>
+    </div>
+
+    <script src="{% static 'js/app.js'%}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+section {
+  padding-top: 100px;
+}
+
+section:first-child {
+  padding-top: 0px;
+}
+
+.identation {
+  padding-left: 20px;
+  display: inline-block;
+}
+
+.code-sample {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.copy-action {
+  float: right;
+  cursor: pointer;
+  margin-right: 20px;
+  text-align: center;
+  padding: 6px;
+}
+
+.code-sample {
+  min-width: 200px;
+  overflow-x: auto;
+  padding: 20px;
+}
+
+.copy-action:hover {
+  border: 1px solid #00A335;
+  background-color: #00A335;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.copy-text::after {
+  content: "Copiar";
+}
+
+.loading-example {
+  width: 100%;
+  height: 100px;
+}
+
+.navbar-example-main {
+  background-color: #00A335;
+  position: fixed;
+}
+
+.navbar-example-main .navbar-brand img {
+  width: 135px !important;
+}
+
+.side-menu-example {
+  margin-bottom: 100px;
+}
+
+.syntaxhighlighter.html {
+  overflow-y: hidden !important;
+}
+
+.scale > div > div {
+  height: 55px;
+  border: 1px solid #DDD;
+  border-radius: 50%;
+}
+
+.scale > div > p {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.scale > div > div.main {
+  width: 70px;
+  height: 70px;
+}
+
+.rule > div {
+  border: 1px solid #DDD;
+  text-transform: uppercase;
+}
+
+#guide iframe {
+  width: 100%;
+  height: 400px;
+}
+
+.link-img-holder {
+  display: inline-block;
+  width: 100%;
+}
+
+.link-img-holder img {
+  width: 100%;
+}
+
+/*# sourceMappingURL=ds.css.map */

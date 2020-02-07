@@ -1,0 +1,67 @@
+@use 'sass:map';
+
+
+
+/*------------------------------------------------------
+   INPUT RANGE
+------------------------------------------------------- */
+
+.form-control-range {
+  outline: 0 !important;
+  box-shadow: none !important;
+  
+  &-icon {
+    display: inline-block;
+  }
+
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  border-radius: get($borderRadius, "border-radius2");
+  height: 6px;
+  width: 100%;
+  outline: 0 !important;
+  background: get($colors, "predominant");
+  background: linear-gradient(to right, get($colors, "accent") 0%, get($colors, "accent") 50%, get($colors, "predominant-dark2") 50%, get($colors, "predominant-dark2") 100%);
+  outline: none;
+  -webkit-appearance: none;
+
+
+  &::-webkit-slider-thumb {
+    box-shadow: none !important;
+    text-decoration: none;
+    -webkit-appearance: none !important;
+    background-color: get($colors, "accent");
+    border-radius: get($borderRadius, "border-radius7");
+    height: 20px;
+    width: 20px;
+    outline: 0 !important
+  }
+
+  &::-moz-range-thumb {
+    box-shadow: none !important;
+    -webkit-appearance: none !important;
+    background-color: get($colors, "accent");
+    border-radius: get($borderRadius, "border-radius7");
+    height: 20px;
+    width: 20px;
+    border: 0px;
+    outline: 0 !important
+  }
+
+  &::-moz-range-progress {
+    width: 100%
+  }
+}
+
+.range-middle {
+  &-icon {
+    font-size: 30px;
+    color: get($colors, "neutral2");
+  }
+
+  display: inline-block;
+  height: 32px;
+  width: calc(100% - 72px);
+}

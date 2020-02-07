@@ -1,0 +1,56 @@
+@use 'sass:map';
+
+
+
+/* ---------------------------------------------------
+  BUTTON badge
+----------------------------------------------------- */
+
+.btn-lg{
+  font-size: get($fonts, "font-size5") !important;
+}
+
+.btn-badge {
+  @extend .btn;
+  @extend .btn-primary;
+
+  & {
+    color: get($colors, "accent") !important;
+    background-color: get($colors, "predominant") !important;
+    border-color: get($colors, "accent") !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+  }
+
+
+  &-link {
+    @extend .btn;
+    color: get($colors, "accent") !important;
+    background-color: get($colors, "predominant") !important;
+    font-weight: bold !important;
+  }
+
+  & span {
+    background-color: get($colors, "critical");
+    color: get($colors, "predominant");
+    border-radius: 50%;
+  }
+
+  &-link span {
+    background-color: get($colors, "critical");
+    color: get($colors, "predominant");
+    border-radius: 50%;
+  }
+
+  &-link:hover {
+    text-decoration: underline !important;
+  }
+
+  &-link:focus {
+    box-shadow: none !important;
+  }
+
+  &:active::after {
+    box-shadow: none !important;
+  }
+}

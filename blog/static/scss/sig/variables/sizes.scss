@@ -1,0 +1,81 @@
+@use 'sass:map';
+@import 'colors';
+
+@function get($map, $key) {
+  @return map.get($map, $key);
+}
+
+//Images
+
+$imgBase: (
+  "img-size": 50px
+);
+
+$images: [];
+
+@each $name,
+$size in $imgBase {
+  @for $i from 1 through 5 {
+    $images: map.merge($images, (#{$name}#{$i}: ($i * $size)));
+  }
+}
+
+// Box-Shadow
+
+$boxShadowBase: (
+  "box-shadow": 1px
+);
+
+$boxShadows: [];
+
+@each $name,
+$size in $boxShadowBase {
+  @for $i from 1 through 5 {
+    $boxShadows: map.merge($boxShadows, (#{$name}#{$i}: ($i * $size) ($i * $size) ($i * $size) get($colors, "neutral2-dark2")));
+  }
+}
+
+// Border-Width
+
+$borderWidthBase: (
+  "border-width": 1px
+);
+
+$borderWidth: [];
+
+@each $name,
+$size in $borderWidthBase {
+  @for $i from 1 through 6 {
+    $borderWidth: map.merge($borderWidth, (#{$name}#{$i}: ($i * $size)));
+  }
+}
+
+//Border-Radius
+
+$borderRadiusBase: (
+  "border-radius": 6px
+);
+
+$borderRadius: [];
+
+@each $name,
+$size in $borderRadiusBase {
+  @for $i from 1 through 7 {
+    $borderRadius: map.merge($borderRadius, (#{$name}#{$i}: ($i * $size)));
+  }
+}
+
+//Font-Size
+
+$fontBase: (
+  "font-size": 11px
+);
+
+$fonts: [];
+
+@each $name,
+$tam in $fontBase {
+  @for $i from 1 through 9 {
+    $fonts: map.merge($fonts, (#{$name}#{$i}: ($i + $tam)));
+  }
+}

@@ -1,0 +1,61 @@
+@use 'sass:map';
+
+/* ---------------------------------------------------
+  BUTTONS
+----------------------------------------------------- */
+
+.btn-sidebar {
+  background-color: get($colors, "accent");
+  border-color: get($colors, "accent");
+  box-shadow: none !important;
+
+  &:hover {
+    background-color: get($colors, "accent-dark1");
+  }
+}
+
+.btn-primary {
+  @extend .btn;
+  background-color: get($colors, "accent");
+  border-color: get($colors, "accent");
+
+  &:hover {
+    background-color: get($colors, "accent-dark1");
+    border-color: get($colors, "accent-dark1")
+  }
+  
+  &:focus, &.focus, &:not(:disabled):not(.disabled):active {
+    background-color: get($colors, "accent-dark2");
+    border-color: get($colors, "accent-dark2")
+  }
+}
+
+
+
+.btn-secondary {
+  @extend .btn;
+  background-color: get($colors, "predominant");
+  border-color: get($colors, "neutral1-light3");
+  color: get($colors, "neutral1-dark5");
+
+  &:hover {
+    background-color: get($colors, "neutral1-light6");
+    border-color: get($colors, "neutral1-light3");
+  }
+
+  &:not(:disabled):not(.disabled):active, &:focus, &.focus {
+    color: get($colors, "neutral1-dark5");
+    background-color: get($colors, "neutral1-light6");
+    border-color: get($colors, "neutral1-light3");
+  }
+}
+
+.btn:focus, .btn.focus {
+    box-shadow: 0 0 0 0;
+}
+
+.btn:not(:disabled):not(.disabled):active:focus,
+.btn:not(:disabled):not(.disabled).active:focus,
+.show>.btn.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0;
+}

@@ -1,0 +1,30 @@
+@use 'sass:map';
+
+
+
+
+/*------------------------------------------------------
+   TOOLTIPS
+------------------------------------------------------- */
+
+.tooltip-inner {
+  background-color: get($colors, "neutral2");
+  color: get($colors, "predominant");
+  font-size: get($fonts, "font-size1");
+}
+
+.tooltip.bs-tooltip-right .arrow:before {
+  border-right-color: get($colors, "neutral1-light3") !important;
+}
+
+.tooltip.bs-tooltip-left .arrow:before {
+  border-left-color: get($colors, "neutral1-light3") !important;
+}
+
+.tooltip.bs-tooltip-bottom .arrow:before {
+  border-bottom-color: get($colors, "neutral1-light3") !important;
+}
+
+.tooltip.bs-tooltip-top .arrow:before {
+  border-top-color: get($colors, "neutral1-light3") !important;
+}

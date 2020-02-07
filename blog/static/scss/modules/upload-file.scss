@@ -1,0 +1,23 @@
+@use 'sass:map';
+
+
+
+/*----------------------------------------------------
+* UPLOAD FILE
+* ---------------------------------------------------*/
+
+.upload-btn-wrapper {
+  position: relative;
+  // overflow: hidden;
+  display: inline-block;
+
+  & input[type=file] {
+    font-size: get($fonts, "font-size5");
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+}
+

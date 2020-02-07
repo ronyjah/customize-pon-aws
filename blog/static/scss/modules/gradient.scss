@@ -1,0 +1,19 @@
+@use 'sass:map';
+
+
+
+
+/* ---------------------------------------------------
+  GRADIENT
+----------------------------------------------------- */
+
+// @each $name,
+// $color in $gradients {
+//   .bg-gradient-effect-#{$name} {
+//     background-image: $color;
+//   }
+// }
+
+.bg-gradient { 
+  background-image: linear-gradient(to right, map.get($colors, 'accent'), map.get($colors, 'accent-dark3')); 
+} 

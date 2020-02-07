@@ -1,0 +1,26 @@
+@use 'sass:map';
+
+/*------------------------------------------------------
+   BUTTON SIG
+------------------------------------------------------- */
+
+.btn[disabled="true"] {
+  background-color: get($colors, "neutral2-dark1");
+  border-color: get($colors, "neutral2-dark1");;
+}
+
+.btn {
+  border-radius: get($borderRadius, "border-radius1");
+}
+
+.btn[disabled="true"]:hover {
+  background-color: get($colors, "neutral2-dark1");
+  border-color: get($colors, "neutral2-dark1");;
+}
+
+.btn-sidebar {
+  & , &:hover{
+    background-color: get($colors, "intermediate");
+    border-color: get($colors, "intermediate");
+  }
+}

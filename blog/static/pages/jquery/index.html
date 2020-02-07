@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="robots" content="noindex">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Router Page Example - JQuery</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../../css/bootstrap-4.4.1/css/bootstrap.min.css">
+
+  <!-- Malihu Custom Scrollbar CSS -->
+  <link rel="stylesheet" href="../../lib/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+  <!-- Intelbras CSS -->
+  <link rel="stylesheet" href="../../css/intelbras.css">
+
+  <!-- Design System Documentation CSS -->
+  <link rel="stylesheet" href="../../css/ds.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../../img/favicon-32x32.png">
+
+  <!-- Sintax Highlight Core -->
+  <link rel="stylesheet" href="../../lib/syntax-highlighter/css/shCore.css">
+
+  <!-- Sintax Highlight Theme -->
+  <link rel="stylesheet" href="../../lib/syntax-highlighter/css/shThemeDefault.css">
+
+</head>
+
+<body>
+
+  <nav class="navbar fixed-top navbar-example-main">
+    <a class="navbar-brand" href="#">
+      <img src="../../img/logo2.png">
+    </a>
+    <!-- <button type="button" id="sidebarCollapse" class="btn btn-sidebar" style="position: fixed; right:10px">
+      <img src="../../img/bars.png">
+    </button> -->
+  </nav>
+
+  <!-- Sidebar  -->
+  <nav id="sidebar">
+
+    <div class="sidebar-header">
+      <h3>Sidebar header</h3>
+    </div>
+
+    <ul class="list-unstyled side-menu-example">
+      <li>
+        <a class="search-list" id="menu-status" href="#status" onclick=loading("status.html")>Status</a>
+      </li>
+      <li>
+        <a class="search-list" id="menu-lan" href="#lan" onclick=loading("lan.html")>LAN</a>
+      </li>
+      <li>
+        <a class="search-list" id="menu-wan" href="#wan">WAN</a>
+      </li>
+      <li>
+        <a class="search-list" id="menu-wireless" href="#wireless">Wireless</a>
+      </li>
+      <li>
+        <a class="search-list" id="menu-voice" href="#voice">Voice</a>
+      </li>
+      <li>
+        <a class="search-list" id="menu-qos" href="#qos">QoS</a>
+      </li>
+      <li>
+        <a class="search-list" id="menu-security" href="#security">Segurança</a>
+      </li>
+      <li>
+        <a class="search-list" id="menu-firewall" href="#firewall">Firewall</a>
+      </li>
+      <li>
+        <a class="search-list" id="menu-routing" href="#routing">Roteamento</a>
+      </li>
+      <li>
+        <a class="search-list" id="menu-services" href="#services">Serviços</a>
+      </li>
+      <li>
+        <a class="search-list" id="menu-ipv6" href="#ipv6">IPV6</a>
+      </li>
+      <li>
+        <a class="search-list" id="menu-diagnostics" href="#diagnostics">Diagnósticos</a>
+      </li>
+      <li>
+        <a class="search-list" id="menu-systems" href="#systems">Sistemas</a>
+      </li>
+      <li>
+        <a class="search-list" id="menu-statistics" href="#statistics">Estatísticas</a>
+      </li>
+
+      <!-- <li>
+        <a href="#homeSubmenu4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+          <span class="search-list-group-label">
+            <svg data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+              <defs>
+                <style>
+                  .cls-1 {
+                    fill: #000;
+                  }
+                </style>
+              </defs>
+              <title>arquivo</title>
+              <path class="cls-1"
+                d="M92.09,19H43.69a2.08,2.08,0,0,1-1.35-.72L37.85,11.5a5.54,5.54,0,0,0-4.3-2.3H7.91a3.59,3.59,0,0,0-3.59,3.59V87.21A3.59,3.59,0,0,0,7.91,90.8H92.09a3.59,3.59,0,0,0,3.59-3.59V22.54A3.59,3.59,0,0,0,92.09,19Zm0,68.26L50,87.25l-42.13,0V29.05l0-16.31H33.55a2.09,2.09,0,0,1,1.35.73l4.49,6.73a5.54,5.54,0,0,0,4.3,2.3l48.4,0v.35l0,6.16V87.21Z" />
+              <path class="cls-1"
+                d="M92.09,91.12H7.91A3.91,3.91,0,0,1,4,87.21V12.79A3.91,3.91,0,0,1,7.91,8.88H33.55a5.87,5.87,0,0,1,4.57,2.44l4.49,6.73a1.8,1.8,0,0,0,1.08.58h48.4A3.91,3.91,0,0,1,96,22.54V87.21A3.91,3.91,0,0,1,92.09,91.12ZM7.91,9.52a3.27,3.27,0,0,0-3.26,3.27V87.21a3.27,3.27,0,0,0,3.26,3.27H92.09a3.27,3.27,0,0,0,3.26-3.27V22.54a3.26,3.26,0,0,0-3.26-3.26H43.69a2.38,2.38,0,0,1-1.62-.87l-4.49-6.73a5.18,5.18,0,0,0-4-2.16ZM50,87.57l-42.46,0V29.05l0-16.63h26a2.4,2.4,0,0,1,1.62.87L39.66,20a5.15,5.15,0,0,0,4,2.15l48.72,0v.67l0,6.16V87.54ZM8.19,86.89l41.81,0,41.81,0V29.05l0-6.19-48.08,0a5.87,5.87,0,0,1-4.57-2.44l-4.49-6.73a1.8,1.8,0,0,0-1.08-.58H8.23l0,16Z" />
+            </svg>
+            <strong>Módulos</strong>
+          </span>
+        </a>
+        <ul class="collapse list-unstyled" id="homeSubmenu4">
+          <li>
+            <a class="search-list" id="menu-form" href="#form">Form</a>
+          </li>
+        </ul>
+      </li> -->
+
+    </ul>
+  </nav>
+
+  <div id="content"></div>
+
+  <div class="overlay"></div>
+
+  <!-- jQuery -->
+  <script src="../../js/jQuery/jquery-3.4.1.min.js"></script>
+
+  <!-- Popper -->
+  <script src="../../js/popper/popper.min.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="../../css/bootstrap-4.4.1/js/bootstrap.min.js"></script>
+
+  <!-- Malihu Custom Scrollbar JS -->
+  <script src="../../lib/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+  <!-- Sintax Highlight Core -->
+  <script type="text/javascript" src="../../lib/syntax-highlighter/js/shCore.js"></script>
+
+  <!-- Sintax Highlight JS -->
+  <script type="text/javascript" src="../../lib/syntax-highlighter/js/shBrushJScript.js"></script>
+
+  <!-- Sintax Highlight HTML/CSS -->
+  <script type="text/javascript" src="../../lib/syntax-highlighter/js/shBrushXml.js"></script>
+
+  <!-- Highlight all -->
+  <script type="text/javascript">
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults['toolbar'] = false;
+  </script>
+
+  <script>  
+    function loading(element){
+      $("#content").load(element); 
+    }
+  </script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.overlay').toggleClass('active');
+      });
+    });
+  </script>
+
+  <script>
+    function copyText(element) {
+      var copyText = document.getElementById(element);
+      copyText.select();
+      document.execCommand("copy");
+    }
+
+    function copyTextDiv(element) {
+      var range = document.createRange();
+      range.selectNode(document.getElementById(element).getElementsByClassName("code")[0]);
+      window.getSelection().removeAllRanges(); // clear current selection
+      window.getSelection().addRange(range); // to select text
+      document.execCommand("copy");
+      window.getSelection().removeAllRanges();// to deselect
+
+    }
+  </script>
+
+  <script>
+    $('input[type="range"]').change(function () {
+      var val = ($(this).val() - $(this).attr('min')) / ($(this).attr('max') - $(this).attr('min'));
+
+      $(this).css('background-image',
+        '-webkit-gradient(linear, left top, right top, '
+        + 'color-stop(' + val + ', #00A335), '
+        + 'color-stop(' + val + ', #cfd3d5)'
+        + ')'
+      );
+    });
+  </script>
+
+  <script type="text/javascript">
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  <script>
+
+    $(document).ready(() => {
+
+      $('#add-toast-success').on('click', () => {
+
+        montageToast('#toast-place-success', 'toast-success', '../../img/confirmacao_linha.svg');
+        hideToast();
+      });
+    });
+  </script>
+
+  <script>
+    $(document).ready(() => {
+
+      $('#add-toast-informational').on('click', () => {
+
+        montageToast('#toast-place-informational', 'toast-informational', '../../img/alerta_linha.svg');
+        hideToast();
+      });
+    });
+  </script>
+
+  <script>
+    $(document).ready(() => {
+
+      $('#add-toast-attention').on('click', () => {
+
+        montageToast('#toast-place-attention', 'toast-attention', '../../img/alerta_linha.svg');
+        hideToast();
+      });
+    });
+  </script>
+
+  <script>
+    $(document).ready(() => {
+
+      $('#add-toast-error').on('click', () => {
+
+        montageToast('#toast-place-error', 'toast-error', '../../img/erro_linha.svg');
+        hideToast();
+      });
+    });
+  </script>
+
+  <script>
+    function hideToast() {
+      $('.toast').on('hidden.bs.toast', e => {
+        $(e.currentTarget).remove();
+      });
+    }
+  </script>
+  <script>
+    function montageToast(idToast, classToast, srcImg) {
+
+      $(idToast).append(`
+                    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
+                    <div class="toast-body ` + classToast + `" id="toastClassError">
+
+                        <strong class="mr-auto"></strong>
+                        <button type="button" class="ml-2 mb-1 close toast-button" data-dismiss="toast" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div class="row">
+                            <div class="col ml-2 mt-1 mr-0">
+                                <a>
+                                    <img id = "toastImg" src="` + srcImg + `">
+                                </a>
+                            </div>
+                            <div class="col mt-2 ml-n5 text-toast">
+                                <p> Lorem ipsum dolor sit amet </p>
+                            </div>
+                        </div>    
+                    
+                    </div>
+                    </div>
+                `);
+
+      $('.toast').toast('show');
+    }
+  </script>
+  <script>
+    // Initialize all popovers
+    $(function () {
+      $('[data-toggle="popover"]').popover()
+    })
+  </script>
+
+  <script>
+    jQuery(function ($) {
+
+      $('.field-input').focus(function () {
+        $(this).parent().addClass('is-focused has-label parent-is-filled');
+      });
+
+      $('.field-input').blur(function () {
+        $parent = $(this).parent();
+
+        $parent.removeClass('parent-is-filled');
+
+        if ($(this).val() == '') {
+          $parent.removeClass('has-label parent-is-valid parent-is-invalid');
+        } else {
+          $parent.addClass('parent-is-filled');
+        }
+
+        if ($(this).hasClass("is-valid")) {
+          $(this).parent().removeClass("parent-is-filled is-invalid");
+          $(this).parent().addClass("parent-is-valid is-valid");
+        }
+        else if ($(this).hasClass("is-invalid")) {
+          $(this).parent().removeClass("parent-is-filled is-valid");
+          $(this).parent().addClass("parent-is-invalid is-invalid");
+        }
+
+        $parent.removeClass('is-focused');
+      });
+
+      $('.field-input').each(function () {
+        if ($(this).val() != '') {
+          $(this).parent().addClass('has-label');
+          $(this).parent().addClass('parent-is-filled');
+        }
+        if ($(this).hasClass("filled")) {
+          $(this).parent().addClass('is-focused has-label parent-is-filled');
+        }
+        if ($(this).hasClass("is-valid")) {
+          $(this).parent().addClass("is-valid");
+          $(this).parent().removeClass("is-invalid");
+          $(this).parent().removeClass("parent-is-filled");
+          $(this).parent().addClass("parent-is-valid");
+        }
+        if ($(this).hasClass("is-invalid")) {
+          $(this).parent().addClass("is-invalid");
+          $(this).parent().removeClass("is-valid");
+          $(this).parent().removeClass("parent-is-filled");
+          $(this).parent().addClass("parent-is-invalid");
+        }
+      });
+    })
+  </script>
+
+  <script>
+    $('#intelbrasOptionsExampleClick').on("click", function () {
+      $('#intelbrasOptionsExampleClick .intelbras-dropdown-content').toggle();
+    });
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      var linklist = $('.search-list');
+      var myarr = [];
+      for (i = 0; i < linklist.length; i++) {
+        myarr.push({ id: linklist[i].id, text: linklist[i].text.trim().toLowerCase() })
+      }
+      $('#txtSearch').keyup(function () {
+        var text = $('#txtSearch').val().toLowerCase();
+        var found = myarr.filter((li) => li.text.indexOf(text) !== -1);
+        {
+          $('.search-list').css('display', 'none');
+        }
+        found.forEach((li) => { $('#' + li.id).css('display', 'block'); });
+
+      });
+    });
+  </script>
+
+  <script>
+
+    function validateEmail(email) {
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+    }
+
+    function validateEmailField(id) {
+      $(id).on('keyup', (ev) => {
+        var val = $(id).val();
+        $(id).removeClass('is-valid');
+        $(id).removeClass('is-invalid');
+        $(id).parent().removeClass('parent-is-valid');
+        $(id).parent().removeClass('parent-is-invalid');
+        if (validateEmail(val)) {
+          $(id).addClass('is-valid');
+        } else {
+          $(id).addClass('is-invalid');
+        }
+      });
+    }
+
+    $(document).ready(function () {
+      validateEmailField('#formGroupExampleInput3');
+      validateEmailField('#formGroupExampleInput4');
+    });
+  </script>
+
+  <script>
+
+    // predominant color
+    $("<p>" + getColor(".bgc-predominant-dark6") + "</p>").appendTo('#bgc-predominant-dark6');
+    $("<p>" + getColor(".bgc-predominant-dark5") + "</p>").appendTo('#bgc-predominant-dark5');
+    $("<p>" + getColor(".bgc-predominant-dark4") + "</p>").appendTo('#bgc-predominant-dark4');
+    $("<p>" + getColor(".bgc-predominant-dark3") + "</p>").appendTo('#bgc-predominant-dark3');
+    $("<p>" + getColor(".bgc-predominant-dark2") + "</p>").appendTo('#bgc-predominant-dark2');
+    $("<p>" + getColor(".bgc-predominant-dark1") + "</p>").appendTo('#bgc-predominant-dark1');
+    $("<p>" + getColor(".bgc-predominant") + "</p>").appendTo('#bgc-predominant');
+    $("<p>" + getColor(".bgc-predominant-light1") + "</p>").appendTo('#bgc-predominant-light1');
+    $("<p>" + getColor(".bgc-predominant-light2") + "</p>").appendTo('#bgc-predominant-light2');
+    $("<p>" + getColor(".bgc-predominant-light3") + "</p>").appendTo('#bgc-predominant-light3');
+    $("<p>" + getColor(".bgc-predominant-light4") + "</p>").appendTo('#bgc-predominant-light4');
+    $("<p>" + getColor(".bgc-predominant-light5") + "</p>").appendTo('#bgc-predominant-light5');
+    $("<p>" + getColor(".bgc-predominant-light6") + "</p>").appendTo('#bgc-predominant-light6');
+
+    // intermediate color
+    $("<p>" + getColor(".bgc-intermediate-dark6") + "</p>").appendTo('#bgc-intermediate-dark6');
+    $("<p>" + getColor(".bgc-intermediate-dark5") + "</p>").appendTo('#bgc-intermediate-dark5');
+    $("<p>" + getColor(".bgc-intermediate-dark4") + "</p>").appendTo('#bgc-intermediate-dark4');
+    $("<p>" + getColor(".bgc-intermediate-dark3") + "</p>").appendTo('#bgc-intermediate-dark3');
+    $("<p>" + getColor(".bgc-intermediate-dark2") + "</p>").appendTo('#bgc-intermediate-dark2');
+    $("<p>" + getColor(".bgc-intermediate-dark1") + "</p>").appendTo('#bgc-intermediate-dark1');
+    $("<p>" + getColor(".bgc-intermediate") + "</p>").appendTo('#bgc-intermediate');
+    $("<p>" + getColor(".bgc-intermediate-light1") + "</p>").appendTo('#bgc-intermediate-light1');
+    $("<p>" + getColor(".bgc-intermediate-light2") + "</p>").appendTo('#bgc-intermediate-light2');
+    $("<p>" + getColor(".bgc-intermediate-light3") + "</p>").appendTo('#bgc-intermediate-light3');
+    $("<p>" + getColor(".bgc-intermediate-light4") + "</p>").appendTo('#bgc-intermediate-light4');
+    $("<p>" + getColor(".bgc-intermediate-light5") + "</p>").appendTo('#bgc-intermediate-light5');
+    $("<p>" + getColor(".bgc-intermediate-light6") + "</p>").appendTo('#bgc-intermediate-light6');
+
+    // accent color
+    $("<p>" + getColor(".bgc-accent-dark6") + "</p>").appendTo('#bgc-accent-dark6');
+    $("<p>" + getColor(".bgc-accent-dark5") + "</p>").appendTo('#bgc-accent-dark5');
+    $("<p>" + getColor(".bgc-accent-dark4") + "</p>").appendTo('#bgc-accent-dark4');
+    $("<p>" + getColor(".bgc-accent-dark3") + "</p>").appendTo('#bgc-accent-dark3');
+    $("<p>" + getColor(".bgc-accent-dark2") + "</p>").appendTo('#bgc-accent-dark2');
+    $("<p>" + getColor(".bgc-accent-dark1") + "</p>").appendTo('#bgc-accent-dark1');
+    $("<p>" + getColor(".bgc-accent") + "</p>").appendTo('#bgc-accent');
+    $("<p>" + getColor(".bgc-accent-light1") + "</p>").appendTo('#bgc-accent-light1');
+    $("<p>" + getColor(".bgc-accent-light2") + "</p>").appendTo('#bgc-accent-light2');
+    $("<p>" + getColor(".bgc-accent-light3") + "</p>").appendTo('#bgc-accent-light3');
+    $("<p>" + getColor(".bgc-accent-light4") + "</p>").appendTo('#bgc-accent-light4');
+    $("<p>" + getColor(".bgc-accent-light5") + "</p>").appendTo('#bgc-accent-light5');
+    $("<p>" + getColor(".bgc-accent-light6") + "</p>").appendTo('#bgc-accent-light6');
+
+    // neutral color 1
+    $("<p>" + getColor(".bgc-neutral1-dark6") + "</p>").appendTo('#bgc-neutral1-dark6');
+    $("<p>" + getColor(".bgc-neutral1-dark5") + "</p>").appendTo('#bgc-neutral1-dark5');
+    $("<p>" + getColor(".bgc-neutral1-dark4") + "</p>").appendTo('#bgc-neutral1-dark4');
+    $("<p>" + getColor(".bgc-neutral1-dark3") + "</p>").appendTo('#bgc-neutral1-dark3');
+    $("<p>" + getColor(".bgc-neutral1-dark2") + "</p>").appendTo('#bgc-neutral1-dark2');
+    $("<p>" + getColor(".bgc-neutral1-dark1") + "</p>").appendTo('#bgc-neutral1-dark1');
+    $("<p>" + getColor(".bgc-neutral1") + "</p>").appendTo('#bgc-neutral1');
+    $("<p>" + getColor(".bgc-neutral1-light1") + "</p>").appendTo('#bgc-neutral1-light1');
+    $("<p>" + getColor(".bgc-neutral1-light2") + "</p>").appendTo('#bgc-neutral1-light2');
+    $("<p>" + getColor(".bgc-neutral1-light3") + "</p>").appendTo('#bgc-neutral1-light3');
+    $("<p>" + getColor(".bgc-neutral1-light4") + "</p>").appendTo('#bgc-neutral1-light4');
+    $("<p>" + getColor(".bgc-neutral1-light5") + "</p>").appendTo('#bgc-neutral1-light5');
+    $("<p>" + getColor(".bgc-neutral1-light6") + "</p>").appendTo('#bgc-neutral1-light6');
+
+    // neutral color 2
+    $("<p>" + getColor(".bgc-neutral2-dark6") + "</p>").appendTo('#bgc-neutral2-dark6');
+    $("<p>" + getColor(".bgc-neutral2-dark5") + "</p>").appendTo('#bgc-neutral2-dark5');
+    $("<p>" + getColor(".bgc-neutral2-dark4") + "</p>").appendTo('#bgc-neutral2-dark4');
+    $("<p>" + getColor(".bgc-neutral2-dark3") + "</p>").appendTo('#bgc-neutral2-dark3');
+    $("<p>" + getColor(".bgc-neutral2-dark2") + "</p>").appendTo('#bgc-neutral2-dark2');
+    $("<p>" + getColor(".bgc-neutral2-dark1") + "</p>").appendTo('#bgc-neutral2-dark1');
+    $("<p>" + getColor(".bgc-neutral2") + "</p>").appendTo('#bgc-neutral2');
+    $("<p>" + getColor(".bgc-neutral2-light1") + "</p>").appendTo('#bgc-neutral2-light1');
+    $("<p>" + getColor(".bgc-neutral2-light2") + "</p>").appendTo('#bgc-neutral2-light2');
+    $("<p>" + getColor(".bgc-neutral2-light3") + "</p>").appendTo('#bgc-neutral2-light3');
+    $("<p>" + getColor(".bgc-neutral2-light4") + "</p>").appendTo('#bgc-neutral2-light4');
+    $("<p>" + getColor(".bgc-neutral2-light5") + "</p>").appendTo('#bgc-neutral2-light5');
+    $("<p>" + getColor(".bgc-neutral2-light6") + "</p>").appendTo('#bgc-neutral2-light6');
+
+    // success color
+    $("<p>" + getColor(".bgc-success-dark6") + "</p>").appendTo('#bgc-success-dark6');
+    $("<p>" + getColor(".bgc-success-dark5") + "</p>").appendTo('#bgc-success-dark5');
+    $("<p>" + getColor(".bgc-success-dark4") + "</p>").appendTo('#bgc-success-dark4');
+    $("<p>" + getColor(".bgc-success-dark3") + "</p>").appendTo('#bgc-success-dark3');
+    $("<p>" + getColor(".bgc-success-dark2") + "</p>").appendTo('#bgc-success-dark2');
+    $("<p>" + getColor(".bgc-success-dark1") + "</p>").appendTo('#bgc-success-dark1');
+    $("<p>" + getColor(".bgc-success") + "</p>").appendTo('#bgc-success');
+    $("<p>" + getColor(".bgc-success-light1") + "</p>").appendTo('#bgc-success-light1');
+    $("<p>" + getColor(".bgc-success-light2") + "</p>").appendTo('#bgc-success-light2');
+    $("<p>" + getColor(".bgc-success-light3") + "</p>").appendTo('#bgc-success-light3');
+    $("<p>" + getColor(".bgc-success-light4") + "</p>").appendTo('#bgc-success-light4');
+    $("<p>" + getColor(".bgc-success-light5") + "</p>").appendTo('#bgc-success-light5');
+    $("<p>" + getColor(".bgc-success-light6") + "</p>").appendTo('#bgc-success-light6');
+
+    // informational color
+    $("<p>" + getColor(".bgc-info-dark6") + "</p>").appendTo('#bgc-info-dark6');
+    $("<p>" + getColor(".bgc-info-dark5") + "</p>").appendTo('#bgc-info-dark5');
+    $("<p>" + getColor(".bgc-info-dark4") + "</p>").appendTo('#bgc-info-dark4');
+    $("<p>" + getColor(".bgc-info-dark3") + "</p>").appendTo('#bgc-info-dark3');
+    $("<p>" + getColor(".bgc-info-dark2") + "</p>").appendTo('#bgc-info-dark2');
+    $("<p>" + getColor(".bgc-info-dark1") + "</p>").appendTo('#bgc-info-dark1');
+    $("<p>" + getColor(".bgc-info") + "</p>").appendTo('#bgc-info');
+    $("<p>" + getColor(".bgc-info-light1") + "</p>").appendTo('#bgc-info-light1');
+    $("<p>" + getColor(".bgc-info-light2") + "</p>").appendTo('#bgc-info-light2');
+    $("<p>" + getColor(".bgc-info-light3") + "</p>").appendTo('#bgc-info-light3');
+    $("<p>" + getColor(".bgc-info-light4") + "</p>").appendTo('#bgc-info-light4');
+    $("<p>" + getColor(".bgc-info-light5") + "</p>").appendTo('#bgc-info-light5');
+    $("<p>" + getColor(".bgc-info-light6") + "</p>").appendTo('#bgc-info-light6');
+
+    // warning color
+    $("<p>" + getColor(".bgc-warning-dark6") + "</p>").appendTo('#bgc-warning-dark6');
+    $("<p>" + getColor(".bgc-warning-dark5") + "</p>").appendTo('#bgc-warning-dark5');
+    $("<p>" + getColor(".bgc-warning-dark4") + "</p>").appendTo('#bgc-warning-dark4');
+    $("<p>" + getColor(".bgc-warning-dark3") + "</p>").appendTo('#bgc-warning-dark3');
+    $("<p>" + getColor(".bgc-warning-dark2") + "</p>").appendTo('#bgc-warning-dark2');
+    $("<p>" + getColor(".bgc-warning-dark1") + "</p>").appendTo('#bgc-warning-dark1');
+    $("<p>" + getColor(".bgc-warning") + "</p>").appendTo('#bgc-warning');
+    $("<p>" + getColor(".bgc-warning-light1") + "</p>").appendTo('#bgc-warning-light1');
+    $("<p>" + getColor(".bgc-warning-light2") + "</p>").appendTo('#bgc-warning-light2');
+    $("<p>" + getColor(".bgc-warning-light3") + "</p>").appendTo('#bgc-warning-light3');
+    $("<p>" + getColor(".bgc-warning-light4") + "</p>").appendTo('#bgc-warning-light4');
+    $("<p>" + getColor(".bgc-warning-light5") + "</p>").appendTo('#bgc-warning-light5');
+    $("<p>" + getColor(".bgc-warning-light6") + "</p>").appendTo('#bgc-warning-light6');
+
+    // critical color
+    $("<p>" + getColor(".bgc-critical-dark6") + "</p>").appendTo('#bgc-critical-dark6');
+    $("<p>" + getColor(".bgc-critical-dark5") + "</p>").appendTo('#bgc-critical-dark5');
+    $("<p>" + getColor(".bgc-critical-dark4") + "</p>").appendTo('#bgc-critical-dark4');
+    $("<p>" + getColor(".bgc-critical-dark3") + "</p>").appendTo('#bgc-critical-dark3');
+    $("<p>" + getColor(".bgc-critical-dark2") + "</p>").appendTo('#bgc-critical-dark2');
+    $("<p>" + getColor(".bgc-critical-dark1") + "</p>").appendTo('#bgc-critical-dark1');
+    $("<p>" + getColor(".bgc-critical") + "</p>").appendTo('#bgc-critical');
+    $("<p>" + getColor(".bgc-critical-light1") + "</p>").appendTo('#bgc-critical-light1');
+    $("<p>" + getColor(".bgc-critical-light2") + "</p>").appendTo('#bgc-critical-light2');
+    $("<p>" + getColor(".bgc-critical-light3") + "</p>").appendTo('#bgc-critical-light3');
+    $("<p>" + getColor(".bgc-critical-light4") + "</p>").appendTo('#bgc-critical-light4');
+    $("<p>" + getColor(".bgc-critical-light5") + "</p>").appendTo('#bgc-critical-light5');
+    $("<p>" + getColor(".bgc-critical-light6") + "</p>").appendTo('#bgc-critical-light6');
+
+    function getColor(id) {
+      var x = $(id).css('backgroundColor');
+      hexc(x);
+      return color;
+    }
+
+    function hexc(colorval) {
+      var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+      delete (parts[0]);
+      for (var i = 1; i <= 3; ++i) {
+        parts[i] = parseInt(parts[i]).toString(16);
+        if (parts[i].length == 1) parts[i] = '0' + parts[i];
+      }
+      color = '#' + parts.join('');
+    }
+  </script>
+</body>
+
+</html>

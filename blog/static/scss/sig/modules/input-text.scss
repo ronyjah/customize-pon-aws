@@ -1,0 +1,263 @@
+@use 'sass:map';
+
+
+/*------------------------------------------------------
+   INPUT TEXT SIG
+------------------------------------------------------- */
+
+.floating {
+  background-color: get($colors, "predominant");
+  border-radius: get($borderRadius, "border-radius1");
+  transition: background-color 0.2s ease;
+  width: 100%;
+  position: relative;
+  padding-top: 5px;
+}
+
+.floating-input:not(:placeholder-shown) {
+  border-color: get($colors, "neutral1");
+}
+
+.floating.success-input-text {
+  background-color: transparent !important;
+}
+
+.floating.error-input-text {
+  background-color: transparent !important;
+}
+
+.floating:focus-within {
+  background-color: transparent !important;
+}
+
+.floating-input {
+  padding: 0px 9px 0px;
+  border-radius: get($borderRadius, "border-radius1");
+  border: 1px solid get($colors, "neutral1");
+  font-size: 14px;
+  height: 45px;
+  overflow: hidden;
+  background-color: get($colors, "predominant");
+}
+
+.floating-input.is-valid-input:disabled, .floating-input.is-valid-input:disabled:hover, 
+.floating-input.is-invalid-input:disabled, .floating-input.is-invalid-input:disabled:hover,
+.floating-input:disabled.is-valid-input:not(:placeholder-shown):disabled, 
+.floating-input:disabled.is-invalid-input:not(:placeholder-shown):disabled,
+.floating-input:disabled, .floating-input:disabled:hover, .floating-input:disabled:focus,
+.floating-input.is-valid-input:disabled, .floating-input.is-invalid-input:disabled{
+  border-color: get($colors, "neutral2") !important;
+  border-left-width: 1px !important;
+}
+
+textarea:disabled {
+  background-color: transparent !important;
+}
+
+.floating-input:disabled ~ .floating-label{
+  color: get($colors, "neutral1") !important;
+}
+
+.floating-input:hover {
+  border-color: get($colors, "neutral1-dark6");
+}
+
+.floating-input:hover ~ .floating-label{
+  color: get($colors, "neutral1-dark6");
+}
+
+.floating-input.is-valid-input {
+  border: 1px solid get($colors, "neutral1") !important;
+  border-left-width: 10px !important;
+  border-left-color: get($colors, "success") !important;
+}
+
+
+.floating-input.is-valid-input:hover ~ .floating-label{
+  color: get($colors, "neutral1");
+}
+
+.floating-input.is-invalid-input {
+  border: 1px solid get($colors, "neutral1") !important;
+  border-left-width: 10px !important;
+  border-left-color: get($colors, "critical") !important;
+}
+
+.floating-input.is-invalid-input:hover ~ .floating-label{
+  color: get($colors, "neutral1");
+}
+
+
+.floating-input.is-valid-input:not(:placeholder-shown) {
+  background-color: transparent !important;
+  border-color: get($colors, "neutral1") !important;
+  border-left-color: get($colors, "success") !important;
+}
+
+.floating-input.is-invalid-input:not(:placeholder-shown) {
+  background-color: transparent !important;
+  border-color: get($colors, "neutral1") !important;
+  border-left-color: get($colors, "critical") !important;
+}
+
+.floating-input.is-invalid-input:not(:placeholder-shown) ~ .floating-label{
+  color: get($colors, "neutral1") !important;
+}
+
+.floating-input:focus {
+  border: 2px solid get($colors, "accent");
+  background-color: transparent !important;
+}
+
+.floating-input:focus ~ .floating-label{
+  color: get($colors, "accent");
+}
+
+.floating-input.is-valid-input {
+  border: 1px solid get($colors, "neutral1");
+  border-left-width: 10px;
+  border-left-color: get($colors, "success") !important;
+}
+
+.floating-input:focus.is-valid-input{
+  border-right-width: 2px !important;
+  border-top-width: 2px !important;
+  border-bottom-width: 2px !important;
+  border-color: get($colors, "success") !important;
+}
+
+.floating-input:focus.is-valid-input ~ .floating-label{
+  color: get($colors, "success") !important;
+}
+
+.floating-input.is-invalid-input {
+  border: 1px solid get($colors, "neutral1");
+  border-left-width: 10px;
+  border-left-color: get($colors, "critical") !important;
+}
+
+.floating-input:focus.is-invalid-input{
+  border-right-width: 2px !important;
+  border-top-width: 2px !important;
+  border-bottom-width: 2px !important;
+  border-color: get($colors, "critical") !important;
+}
+
+.floating-input:focus.is-invalid-input ~ .floating-label{
+  color: get($colors, "critical") !important;
+}
+
+.floating-input::placeholder {
+  color: transparent;
+}
+
+.floating-label {
+  display: block;
+  position: absolute;
+  top: 45px;
+  max-height: 0;
+  pointer-events: none;
+  font-size: 14px;
+  margin: 0;
+  color: get($colors, "neutral1");
+  font-weight: normal;
+  background-color: get($colors, "predominant");
+}
+
+.floating-label::before {
+  content: attr(data-content);
+  display: block;
+  filter: blur(0);
+  backface-visibility: hidden;
+  transform-origin: left top;
+  transition: transform 0.2s ease;
+  left: 16px;
+  position: relative;
+  background-color: get($colors, "predominant");
+  padding: 0px 4px 0px;
+}
+
+.floating-label::after {
+  bottom: 16px;
+  content: "";
+  height: 1.6px;
+  position: fixed !important;
+  opacity: 0;
+  left: 0;
+  top: 100%;
+  transform: scale3d(0, 1, 1);
+  width: 100%;
+}
+
+.floating-input:focus + .floating-label::after {
+  transform: none !important;
+}
+
+.floating-input:placeholder-shown + .floating-label::before {
+  transform: none !important;
+}
+
+.floating-label::before,
+.floating-input:focus + .floating-label::before {
+  transform: none !important;
+}
+
+.floating-label{
+  transform: translate3d(0, -47px, 0) scale3d(0.82, 0.82, 1);
+}
+
+input, textarea{
+  outline: transparent;
+  background: none;
+  border-width: 0;
+  display: block;
+  width: 100%;
+}
+
+textarea{
+  padding: 12px 9px 0px !important;
+}
+
+.success-response {
+  display: none;
+}
+
+.success-input-text~.success-response {
+  display: none !important;
+}
+
+.error-response {
+  padding: 2px;
+  display: none;
+  width: 100%;
+  margin-top: 3px;
+  margin-left: 0px !important;
+  font-size: get($fonts, "font-size1");
+  text-align: center;
+  color: get($colors, "predominant") !important;
+  background-color: get($colors, "critical");
+  border-radius: get($borderRadius, "border-radius1");
+}
+
+.error-input-text~.error-response {
+  display: block !important;
+}
+
+/*------------------------------------------------------
+   INPUT PASSWORD SIG
+------------------------------------------------------- */
+
+.imgPassword {
+  cursor: pointer;
+  right: 20px;
+  top: 22px;
+  position: absolute !important;
+  width: 20px;
+  display: block !important;
+  color: get($colors, "neutral1")
+}
+
+.floating-input:disabled ~ .imgPassword{
+  // display: none;
+  color: get($colors, "neutral2");
+}

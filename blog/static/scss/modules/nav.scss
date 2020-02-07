@@ -1,0 +1,50 @@
+@use 'sass:map';
+
+
+
+/*---------------------------------------------------
+* NAV
+* -------------------------------------------------*/
+
+.nav-simple{
+  color: get($colors, "neutral1-light2");
+  
+  &:hover {
+    border: get($borderWidth, "border-width1") solid transparent !important;
+    text-decoration: none !important;
+    color: get($colors, "neutral1-light1");
+  }
+
+
+  &-pills:hover {
+    color: get($colors, "accent");
+    background: get($colors, "predominant");
+  }
+
+  &.active {
+    border: get($borderWidth, "border-width1") solid transparent !important;
+    background: transparent !important;
+    color: get($colors, "accent") !important;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-left-width: 0;
+    border-bottom: get($colors, "accent") get($borderWidth, "border-width5") solid !important;
+  }
+
+  &-pills.active {
+    background: get($colors, "accent") !important;
+    color: get($colors, "predominant") !important;
+  }
+}
+
+.tab-content {
+  padding: 20px !important;
+}
+
+@media (max-width: 940px) {
+  .nav-simple-pills.nav-link {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 80px;
+  }
+}

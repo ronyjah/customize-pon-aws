@@ -1,0 +1,54 @@
+@use 'sass:color';
+@use 'sass:map';
+
+
+$colorsBase: (
+  "predominant": #F6F6F6,
+  "intermediate": #3E5055 ,
+  "accent": #4FC95D,
+  "neutral1": #9A9A9A,
+  "neutral2": #D1D1D1,
+  "success": #4FC95D,
+  "info": #00A8D5,
+  "warning": #EB741F,
+  "critical": #FD0000
+);
+
+$colors: $colorsBase;
+
+$color-tone-variation: 12%;
+
+@function get($map, $key) {
+  @return map.get($map, $key);
+}
+
+@each $name,
+$color in $colorsBase {
+  @for $i from 1 through 6 {
+    $colors: map.merge($colors, (#{$name}-dark#{$i}:color.scale($color, $red: -($i * $color-tone-variation), $green: -($i * $color-tone-variation), $blue: -($i * $color-tone-variation))));
+  }
+
+  @for $i from 1 through 6 {
+    $colors: map.merge($colors, (#{$name}-light#{$i}:color.scale($color, $red: ($i * $color-tone-variation), $green: ($i * $color-tone-variation), $blue: ($i * $color-tone-variation))));
+  }
+}
+
+$gradientBase: (
+  "inicial": none
+);
+
+$gradients: $gradientBase;
+
+$gradientDirection: "to right";
+
+@each $name1, $color1 in $colorsBase {
+  @each $name2, $color2 in $colorsBase {
+    @if $name1 != $name2 {
+      $gradients: map.merge($gradients, (#{$name1}-#{$name2}: linear-gradient(#{$gradientDirection}, (map.get($colors, #{$name1}), map.get($colors, #{$name2})))));
+      $gradients: map.merge($gradients, (#{$name1}-dark-#{$name2}-light: linear-gradient(#{$gradientDirection}, (map.get($colors, #{$name1}-dark6), map.get($colors, #{$name2}-light1)))));
+      $gradients: map.merge($gradients, (#{$name1}-light-#{$name2}-dark: linear-gradient(#{$gradientDirection}, (map.get($colors, #{$name1}-light1), map.get($colors, #{$name2}-dark6)))));
+    }
+  }
+}
+
+$linear-effect: -webkit-gradient(linear, left top, right top, color-stop(0.15, get($colors, "accent")), color-stop(0.15, get($colors, "neutral1-light5")));

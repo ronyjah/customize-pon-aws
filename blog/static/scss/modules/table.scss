@@ -1,0 +1,137 @@
+@use 'sass:map';
+
+
+
+
+/*------------------------------------------------------
+* TABLE
+*------------------------------------------------------- */
+
+table.intelbras-table {
+  background-color: get($colors, "predominant");
+  text-align: center;
+  border-collapse: collapse;
+
+
+  & td,
+  & th {
+    border: get($borderWidth, "border-width1") solid get($colors, "neutral1-light2");
+    padding: 5px 10px;
+  }
+
+  & tbody td {
+    font-size: get($fonts, "font-size4");
+    color: get($colors, "neutral1-light3");
+  }
+
+  & tr:nth-child(even) {
+    background: get($colors, "neutral2-light6");
+  }
+
+  & thead {
+    background: get($colors, "predominant");
+  }
+
+  & thead th {
+    font-size: get($fonts, "font-size4");
+    font-weight: bold;
+    color: get($colors, "neutral1-dark5");
+    border: get($borderWidth, "border-width1") solid get($colors, "neutral1-dark5");
+    text-align: center;
+  }
+
+  & .disabled {
+    color: get($colors, "neutral1-light4");
+  }
+
+  & .title {
+    color: get($colors, "neutral1-dark5");
+    font-weight: 500;
+    text-align: left;
+  }
+}
+
+.intelbras-table{
+  & .intelbras-dropdown {
+    position: relative;
+    display: inline-block;
+    text-align: left;
+    border-collapse: collapse;
+  }
+
+  & button.intelbras-dropdown-btn {
+    background-color: get($colors, "predominant");
+    padding: 5px 50px 5px 10px;
+    font-size: get($fonts, "font-size4");
+    border: get($colors, "neutral1-light3") solid get($borderWidth, "border-width1");
+    cursor: pointer;
+    color: get($colors, "neutral1-light3");
+    text-align: left;
+    outline: none
+  }
+
+  & .arrow {
+    top: 12px;
+  }
+
+  & .intelbras-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: get($colors, "predominant");
+    z-index: 1;
+    border: get($colors, "neutral1-light3") solid get($borderWidth, "border-width1");
+  }
+
+  & .intelbras-dropdown-content a {
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    color: get($colors, "neutral1-light3");
+    background-color: get($colors, "predominant");
+    font-size: get($fonts, "font-size4");
+  }
+
+  & .intelbras-dropdown:hover .intelbras-dropdown-content {
+    display: block;
+    top: 29px;
+  }
+
+  & .intelbras-dropdown-content a:hover {
+    background-color: get($colors, "accent");
+    color: get($colors, "predominant");
+  }
+
+  @media (max-width: 940px) {
+    & button.intelbras-dropdown-btn {
+      width: 100%;
+    }
+
+    & .intelbras-dropdown-content {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    & button.intelbras-dropdown-btn {
+      width: 700px;
+      padding: none !important;
+    }
+
+    & .intelbras-dropdown-content {
+      width: 100%;
+      padding: none !important;
+    }
+  }
+
+  @media only screen and (min-width: 1501px) and (max-width: 1853px) {
+    & button.intelbras-dropdown-btn {
+      width: 500px !important;
+      padding: none !important;
+    }
+
+    & .intelbras-dropdown-content {
+      width: 100% !important;
+      padding: none !important;
+    }
+  }
+}

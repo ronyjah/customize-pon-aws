@@ -1,0 +1,94 @@
+.head {
+    background-color: #129c49;
+    margin-top: 0;
+    padding: 20px 20px 70px 40px;
+  }
+  
+  .page-header h1, .page-header h2, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 30pt;
+    text-decoration: none;
+  }
+  
+  body {
+    text-align: center;
+    background-color: #f0f1f0;
+  }
+  * {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    box-sizing: border-box;
+    color: #314355;
+
+  }
+
+#progress-bar {
+    margin-top: 1em;
+  }
+
+  #espace {
+    margin-top: 15em;
+  }
+
+ input[type="submit"] {
+    width: 110px;
+    height: 25px;
+    background: #00A335;
+    outline: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+element.style {
+    width: 180px;
+    height: 50px;
+    /*background: url(/home/ronaldo/tutorial/blog/static/img/login_icon_m.png) no-repeat;*/
+    background-position: 0 0;
+    float: left;
+    margin-left: 30px;
+    margin-top: 4px;
+    background-size: 100% 100%;
+}
+.content .content_logo {
+    width: 180px;
+    height: 50px;
+    background: url(./admin/LoginFiles/login_icon_m.png) no-repeat;
+    background-position: 0 0;
+    float: left;
+    margin-left: 30px;
+    margin-top: 4px;
+}
+/* input[type="submit" i] {
+    -webkit-appearance: push-button;
+    user-select: none;
+    white-space: pre;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: buttontext;
+    background-color: buttonface;
+    box-sizing: border-box;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-image: initial;
+} */
+
+
+
+  /* body {
+    background-color: lightblue;
+  } */
+  
+  /* h1 {
+    color: navy;
+    margin-left: 20px;
+  }*/
+  h1 a, h2 a {
+    color: #129c49; 
+  }

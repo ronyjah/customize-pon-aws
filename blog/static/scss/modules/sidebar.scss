@@ -1,0 +1,204 @@
+@use 'sass:map';
+
+
+
+
+/* ---------------------------------------------------
+  SIDEBAR
+----------------------------------------------------- */
+
+#sidebar {
+  width: 250px;
+  position: fixed;
+  top: 57px;
+  left: 0;
+  height: 100%;
+  z-index: 999;
+  background: get($colors, "neutral2-light6");
+  color: get($colors, "predominant");
+  transition: all 0.3s;
+
+  & .cls-1 {
+    fill: get($colors, "neutral1-dark5");
+  }
+  
+  & a:hover .cls-1 {
+    fill: get($colors, "predominant");
+  }
+  
+  & a svg {
+    margin-top: calc(#{get($fonts, "font-size6")} - 20px);
+  }
+  
+  & a[aria-expanded="true"] .cls-1 {
+    fill: get($colors, "predominant");
+  }
+  
+  &.active {
+    margin-left: -250px;
+  }
+  
+  & .sidebar-header {
+    display: none
+  }
+  
+  & ul li a {
+    padding: 10px 25px;
+    font-size: get($fonts, "font-size6");;
+    display: block;
+    color: get($colors, "neutral1-dark5");
+  }
+  
+  & ul > li a:hover {
+    color: get($colors, "predominant");
+    background: get($colors, "accent");
+  }
+  
+  & ul > li.active>a,
+  a[aria-expanded="true"] {
+    color: get($colors, "predominant") !important;
+    background: get($colors, "accent");
+  }
+}
+
+
+
+.overlay {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 998;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+
+  @media (max-width: 768px) {
+    &.active {
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+
+
+
+
+.search-list-group .search-list-group-label {
+  padding: 10px 5px;
+  background: get($colors, "neutral2-light3");
+  display: block;
+  color: get($colors, "neutral1-dark1");
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+.search-list-group-label svg {
+  width: 20px;
+}
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+ul ul a {
+  font-size: get($fonts, "font-size3") !important;
+  padding-left: 30px !important;
+  background: get($colors, "predominant");
+}
+
+@media (max-width: 768px) {
+  #sidebarCollapse {
+    display: block
+  }
+
+  #sidebar {
+    width: 250px;
+    position: fixed;
+    left: -250px;
+    height: 100%;
+    z-index: 999;
+    background: get($colors, "accent");
+    color: get($colors, "neutral1-dark5");
+    box-shadow: get($boxShadows, "box-shadow3");
+
+    &.active {
+      left: 0;
+      margin-left: 0;
+    }
+  
+    & .sidebar-header {
+      display: block;
+      padding: 20px;
+      background: get($colors, "predominant");
+    }
+  
+    & ul li a {
+      padding: 10px;
+      font-size: get($fonts, "font-size6");;
+      display: block;
+      color: get($colors, "predominant")
+    }
+  
+    & ul li a:hover {
+      color: get($colors, "predominant");
+      background-color: get($colors, "accent");
+      border-right: get($borderWidth, "border-width5") solid get($colors, "predominant")
+    }
+  
+  
+  
+  }
+
+  
+  ul ul a {
+    font-size: get($fonts, "font-size1") !important;
+    padding-left: 30px !important;
+    background: get($colors, "accent-light1");
+  }
+}
+
+/* ---------------------------------------------------
+  SCROLLBAR SIDEBAR
+----------------------------------------------------- */
+.mCS-minimal.mCSB_scrollTools .mCSB_dragger {
+  & .mCSB_dragger_bar {
+    background-color: get($colors, "neutral1-light4") !important;
+  }
+
+  &.mCSB_dragger_onDrag .mCSB_dragger_bar,
+  &:active .mCSB_dragger_bar {
+    background-color: get($colors, "neutral1-light4") !important;
+  }
+}
+
+/* ---------------------------------------------------
+  CONTENT
+----------------------------------------------------- */
+
+#content {
+  width: calc(100% - 250px);
+  padding: 40px;
+  min-height: 100%;
+  transition: all 0.3s;
+  position: absolute;
+  top: 70px;
+  right: 0;
+
+  &.active {
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    & {
+      width: 100%;
+    }
+  }
+}
+
+

@@ -1,0 +1,28 @@
+@use 'sass:map';
+
+
+
+/*---------------------------------------------------
+* PAGINATION
+* -------------------------------------------------*/
+
+.page-link {
+  color: get($colors, "accent");
+  border: get($colors, "neutral1-light3") get($borderWidth, "border-width1") solid !important;
+
+  &:hover {
+    color: get($colors, "accent");
+    border: get($colors, "predominant") get($borderWidth, "border-width1") solid;
+    background: get($colors, "predominant");
+  }
+
+  .page-item.active & {
+    color: get($colors, "predominant");
+    background-color: get($colors, "accent");
+    border-color: get($colors, "accent");
+  }
+}
+
+
+
+
